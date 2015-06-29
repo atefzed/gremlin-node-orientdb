@@ -32,6 +32,11 @@
         "email": "hmidihamdi7@gmail.com"
     }],
     "license": "MIT",
+    "dependencies": {
+        "async": "^1.2.1",
+        "grex": "^0.8.0",
+        "lodash": "^3.9.3"
+    },
     "bugs": {
         "url": "https://github.com/atefzed/gremlin-node-orientdb/issues"
     },
