@@ -1,0 +1,44 @@
+{
+    "name": "gremlin-node-orientdb",
+    "version": "1.0.0",
+    "description": "Gremlin-node-orientdb is a javascript wrapper around the Gremlin API using Rexster.",
+    "main": "./lib/graph.js",
+    "directories": {
+        "example": "example",
+        "lib": "lib",
+        "test": "test"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/atefzed/gremlin-node-orientdb.git"
+    },
+    "keywords": [
+        "orientdb",
+        "gremlin",
+        "graph",
+        "graphdb",
+        "rexster",
+        "sails-orientdb",
+        "extension"
+    ],
+    "author": [{
+        "name": "Haythem Khiri",
+        "email": "haythem.khiri@yahoo.fr"
+    }, {
+        "name": "Hamdi Hmidi",
+        "email": "hmidihamdi7@gmail.com"
+    }],
+    "license": "MIT",
+    "dependencies": {
+        "async": "^1.2.1",
+        "grex": "^0.8.0",
+        "lodash": "^3.9.3"
+    },
+    "bugs": {
+        "url": "https://github.com/atefzed/gremlin-node-orientdb/issues"
+    },
+    "homepage": "https://github.com/atefzed/gremlin-node-orientdb#readme"
+}
