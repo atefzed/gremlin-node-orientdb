@@ -2,7 +2,7 @@
 
 Gremlin-node-orientdb is a javascript wrapper around the Gremlin API using Rexster.
 
-# Rexster
+## Rexster
 
 Rexster provides a RESTful shell to any Blueprints-complaint graph database. This HTTP web service provides: a set of standard low-level GET, POST, and DELETE methods, a flexible extension model which allows plug-in like development for external services (such as ad-hoc graph queries through Gremlin), and a browser-based interface called The Dog House.
 
@@ -58,7 +58,7 @@ Locate the BIN folder in the Rexster directory, and enter this command line :
 $ ./rexster.sh -s -c ../config/rexster.xml 
 ```
 
-# Installation
+## Installation
 
 ```bash
 $ git clone git@github.com:atefzed/gremlin-node-orientdb.git
@@ -71,7 +71,7 @@ $ cd gremlin-node-orientdb && npm install
 2. Rexster server.
 3. Node.js application.
 
-# Examples
+## Examples
 
 #### Using sails-orientdb
 
@@ -156,6 +156,14 @@ g.filter('', '{{ COLLECTION NAME }}', {
 });
 ```
 
-# Contributing
+## Tests
+
+All tests are written with [mocha](http://visionmedia.github.com/mocha/) and should be run with [npm](http://npmjs.org):
+
+``` bash
+  $ npm test
+```
+
+## Contributing
 
 Contributions to the project are most welcome, so feel free to fork and improve.
