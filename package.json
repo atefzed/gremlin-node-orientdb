@@ -40,13 +40,11 @@
     "grex": "^0.8.0",
     "lodash": "^3.9.3"
   },
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  },
   "bugs": {
     "url": "https://github.com/atefzed/gremlin-node-orientdb/issues"
   },
-  "homepage": "https://github.com/atefzed/gremlin-node-orientdb#readme",
-  "devDependencies": {
-    "chai": "^3.0.0",
-    "mocha": "^2.2.5",
-    "sinon": "^1.15.4"
-  }
+  "homepage": "https://github.com/atefzed/gremlin-node-orientdb#readme"
 }
