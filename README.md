@@ -48,6 +48,7 @@ In order to configure Rexster to connect to your OrientDB graph, locate the rexs
   </graphs>
 </rexster>
 ```
+For instance, for local database, replace `{{ DATABASE'S LOCATION }}` by `remote:localhost/{{ DATABASE'S NAME }}`.
 
 #### Run
 
