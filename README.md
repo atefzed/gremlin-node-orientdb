@@ -69,3 +69,83 @@ $ cd gremlin-node-orientdb && npm install
 
 #### Using sails-orientdb
 
+```javascript
+var orientAdapter = require('sails-orientdb');
+
+function extend(Parent, Child){
+	var key;
+	for(key in Parent){
+		if(typeof Parent[key] === 'function' && !Child[key])
+			Child[key] = Parent[key];
+	}
+}
+var Graph = require('{{ PATH TO GRAPH.JS }}');
+extend(new Graph(), orientAdapter);
+
+module.exports = {
+  	// Setup Adapters
+  	// Creates named adapters that have have been required
+	adapters: {
+	   'default': orientAdapter,
+	   orient: orientAdapter,
+	},
+
+	// Build Connections Config
+	// Setup connections using the named adapter configs
+	connections: {
+	   myLocalOrient: {
+		   adapter: 'orient',
+		   host: 'localhost',
+		   port: {{ PORT }},
+		   user: '{{ USERNAME }}',
+		   password: '{{ PASSWORD }}',
+		   database: "{{ DATABASE'S NAME }}"
+	   }
+	},
+
+	defaults: {
+	   migrate: 'safe'
+	}
+}
+```
+
+Simple request :
+
+```javascript
+  var o = app.models.{{ COLLECTION NAME }};
+  o.inV('id', '#12:0', function(err, resp) {
+    if (err) throw err;
+    console.log(resp);
+  });
+```
+
+Nested request :
+
+```javascript
+  var o = app.models.{{ COLLECTION NAME }};
+  o.inV('id', '#12:0', function(error, resp) {
+    if (error) throw error;
+    o.dedup(resp, function(e, r){
+      if (e) throw e;
+      o.count(r, function(err, c){
+        if (err) throw err;
+        console.log(c);
+      });
+    });
+  });
+```
+
+
+#### Without sails-orientdb
+
+```javascript
+var Graph = require('{{ PATH TO GRAPH.JS }}');
+var g = new Graph();
+g.filter('', '{{ COLLECTION NAME }}', {
+  'lastname': 'test',
+  'familySituation': 'single'
+}, function(err, res) {
+    if (err) throw err;
+    console.log(res);
+});
+```
