@@ -1,4 +1,5 @@
 'use strict';
+
 /**
  * Dependancies
  */
@@ -11,19 +12,23 @@ var g = new Graph();
 g.filter('', 'prof', {
     'firstname': 'test'
 }, function(err, res) {
-    console.log(1, err, res);
+    if (err) throw err;
+    console.log(res);
 });
 
 g.has('', 'prof', 'firstname', 'test', 'all', function(err, rec) {
-    console.log(2, err, rec);
+    if (err) throw err;
+    console.log(rec);
 });
 
 g.outE('', 'prof', 'id', '#12:5', 'E', function(err, rec) {
-    console.log(3, err, rec);
+    if (err) throw err;
+    console.log(rec);
 });
 
 g.shortestPath('', 'prof', '#12:15', '#12:9', 4, function(err, rec) {
-    console.log(4, err, rec);
+    if (err) throw err;
+    console.log(rec);
 });
 
 
@@ -33,12 +38,12 @@ g.shortestPath('', 'prof', '#12:15', '#12:9', 4, function(err, rec) {
 var o = app.models.prof;
 
 o.inV('id', '#12:0', function(err, resp) {
-    o.dedup(resp, function(e, r){
+    o.dedup(resp, function(e, r) {
         console.log(r);
     });
 });
 
-o.loop('#12:15', 'loops<4', "firstname == 'test'", function(err, resp){
+o.loop('#12:15', 'loops<4', "firstname == 'test'", function(err, resp) {
     console.log(resp);
 });
 
