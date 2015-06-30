@@ -65,7 +65,7 @@ $ git clone git@github.com:atefzed/gremlin-node-orientdb.git
 $ cd gremlin-node-orientdb && npm install
 ```
 
-#### Run
+To run your app, you need to run these step by step :
 
 1. Orientdb server.
 2. Rexster server.
