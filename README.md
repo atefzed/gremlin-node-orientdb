@@ -149,3 +149,7 @@ g.filter('', '{{ COLLECTION NAME }}', {
     console.log(res);
 });
 ```
+
+# Contributing
+
+Contributions to the project are most welcome, so feel free to fork and improve.
