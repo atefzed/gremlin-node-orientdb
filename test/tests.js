@@ -42,6 +42,13 @@ describe("Vertices", function() {
                 done();
             })
         })
+        it("linkBoth", function(done) {
+            g.linkBoth(conn, prof, "#12:15", course, ["#12:14", "#12:5"], function(e1, r1) {
+                if (e1) console.log(e1);
+                // console.log(r1);
+                done();
+            })
+        })
     })
 });
 
