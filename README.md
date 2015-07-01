@@ -78,15 +78,7 @@ To run your app, you need to run these step by step :
 ```javascript
 var orientAdapter = require('sails-orientdb');
 
-function extend(Parent, Child){
-	var key;
-	for(key in Parent){
-		if(typeof Parent[key] === 'function' && !Child[key])
-			Child[key] = Parent[key];
-	}
-}
-var Graph = require('{{ PATH TO GRAPH.JS }}');
-extend(new Graph(), orientAdapter);
+require('{{ PATH TO GRAPH.JS }}')(orientAdapter);
 
 module.exports = {
   	// Setup Adapters
