@@ -19,9 +19,6 @@ module.exports = Waterline.Collection.extend({
         },
         title: {
             type: 'string'
-        },
-        dateHour: {
-            type: 'datetime'
         }
     },
 

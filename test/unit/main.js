@@ -30,9 +30,9 @@ module.exports = function(callback) {
         app: function(cb) {
             orm.initialize(orientdb, function(err, models) {
                 if (err) throw err;
-                // require('./gen-db')(app);
                 app.models = models.collections;
                 app.connections = models.connections;
+                // require('./gen-db')(app);
                 return cb(null, app);
             });
         },

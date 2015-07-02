@@ -55,17 +55,14 @@ var arrObjs = [{
 
 module.exports = function(app) {
     async.eachSeries(arrObjs, function(item, cb) {
+
             if (item.t === "vertex1") {
                 app.models.vertex1.create(item.o, function(err, vertex1) {
-                    if (err) return res.json({
-                        err: err
-                    }).status(400);
+                   console.log(err,vertex1);
                 });
             } else {
                 app.models.vertex2.create(item.o, function(err, vertex2) {
-                    if (err) return res.json({
-                        err: err
-                    }).status(400);
+                    console.log(err,vertex2);
                 });
             }
             cb();
