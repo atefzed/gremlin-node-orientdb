@@ -25,6 +25,20 @@ var arrObjs = [{
     t: "vertex1"
 }, {
     o: {
+        firstname: "test",
+        lastname: "test",
+        age: 106
+    },
+    t: "vertex1"
+}, {
+    o: {
+        firstname: "test",
+        lastname: "test",
+        age: 100
+    },
+    t: "vertex1"
+}, {
+    o: {
         firstname: "Lisa",
         lastname: "Simpson",
         age: 13
@@ -58,11 +72,11 @@ module.exports = function(app) {
 
             if (item.t === "vertex1") {
                 app.models.vertex1.create(item.o, function(err, vertex1) {
-                   console.log(err,vertex1);
+                    // console.log(err,vertex1);
                 });
             } else {
                 app.models.vertex2.create(item.o, function(err, vertex2) {
-                    console.log(err,vertex2);
+                    // console.log(err,vertex2);
                 });
             }
             cb();
