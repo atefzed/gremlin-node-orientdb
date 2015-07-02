@@ -21,7 +21,6 @@ describe('', function() {
 
     describe("TEST OF: Vertices", function() {
         describe("METHOD: v", function() {
-
             it("Should get a WARN message: Cannot use Vertex's methods! Cause: The relationship model is using Vertex's methods.", function(done) {
                 app.models.relationship.v("id", "#0:0", function(e1, r1) {
                     // if (e1) console.log(e1);
@@ -114,6 +113,29 @@ describe('', function() {
 
             it("Should get an ERROR message: Query returns more than 1 row! Cause: ID's format is wrong.", function(done) {
                 app.models.vertex1.v("firstname", "test", function(e1, r1) {
+                    // if (e1) console.log(e1);
+                    // else console.log(r1);
+                    done();
+                })
+            })
+        })
+        describe("METHOD: V", function() {
+            it("Should return an array of Vertex1.", function(done) {
+                app.models.vertex1.V(function(e1, r1) {
+                    // if (e1) console.log(e1);
+                    // else console.log(r1);
+                    done();
+                })
+            })
+            it("Should return an array of Vertex1.", function(done) {
+                app.models.vertex1.V(0, function(e1, r1) {
+                    // if (e1) console.log(e1);
+                    // else console.log(r1);
+                    done();
+                })
+            })
+            it("Should return an array of Vertex1.", function(done) {
+                app.models.vertex1.V(1, function(e1, r1) {
                     // if (e1) console.log(e1);
                     // else console.log(r1);
                     done();
