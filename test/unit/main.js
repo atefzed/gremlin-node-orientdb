@@ -23,8 +23,6 @@ orm.loadCollection(vertex2);
 
 var orientdb = require('./config/orientdb');
 
-
-
 module.exports = function(callback) {
     async.auto({
         app: function(cb) {
