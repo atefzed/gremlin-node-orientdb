@@ -23,8 +23,6 @@ orm.loadCollection(vertex2);
 
 var orientdb = require('./config/orientdb');
 
-
-
 module.exports = function(callback) {
     async.auto({
         app: function(cb) {
@@ -32,7 +30,7 @@ module.exports = function(callback) {
                 if (err) throw err;
                 app.models = models.collections;
                 app.connections = models.connections;
-                require('./gen-db')(app);
+                // require('./gen-db')(app);
                 return cb(null, app);
             });
         },
