@@ -191,7 +191,7 @@ describe('', function() {
                 });
             });
 
-            it("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
+            xit("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex2.inV({
                         "id": r1[0]._id
@@ -203,7 +203,7 @@ describe('', function() {
                 });
             });
 
-            it("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
+            xit("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex1.inV({
                         'id': r1[0]._id
@@ -347,7 +347,7 @@ describe('', function() {
                 });
             });
 
-            it("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
+            xit("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex1.bothV({
                         'id': r1[0]._id
