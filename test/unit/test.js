@@ -70,7 +70,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
+            it("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex2.v({
                         "id": r1[0]._id
@@ -92,7 +92,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an object when the input ID exists.", function(done) {
+            it("should return an object when the input ID exists.", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex1.v({
                         "id": r1[0]._id
@@ -103,7 +103,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an ERROR message: 'Query returns more than 1 row!' When ID's format is wrong.", function(done) {
+            it("should return an ERROR message: 'Query returns more than 1 row!' When ID's format is wrong.", function(done) {
                 app.models.vertex1.v({
                     "firstname": "test"
                 }, function(e1, r1) {
@@ -121,7 +121,7 @@ describe('', function() {
                 }).to.throw();
             });
 
-            xit("should return an array of Vertex1 when the 'all' argument isn't set.", function(done) {
+            it("should return an array of Vertex1 when the 'all' argument isn't set.", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     should.not.exist(e1);
                     (r1 instanceof Array).should.be.true;
@@ -129,7 +129,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an array of Vertex1 when the 'all' argument is set to 0.", function(done) {
+            it("should return an array of Vertex1 when the 'all' argument is set to 0.", function(done) {
                 app.models.vertex1.V(0, function(e1, r1) {
                     should.not.exist(e1);
                     (r1 instanceof Array).should.be.true;
@@ -137,7 +137,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an array of Vertex1 when the 'all' argument is set to 1.", function(done) {
+            it("should return an array of Vertex1 when the 'all' argument is set to 1.", function(done) {
                 app.models.vertex1.V(1, function(e1, r1) {
                     should.not.exist(e1);
                     (r1 instanceof Array).should.be.true;
@@ -171,7 +171,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return a VALIDATION message: 'ARG1's key must be a string!' When ARG1 isn't string.", function(done) {
+            it("should return a VALIDATION message: 'ARG1's key must be a string!' When ARG1 isn't string.", function(done) {
                 app.models.vertex1.inV({
                     5: 'a'
                 }, function(e1, r1) {
@@ -191,7 +191,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
+            it("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex2.inV({
                         "id": r1[0]._id
@@ -203,7 +203,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
+            it("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex1.inV({
                         'id': r1[0]._id
@@ -219,7 +219,7 @@ describe('', function() {
         });
 
         describe("METHOD: outV", function() {
-            xit("should return a WARN message: 'Cannot use Vertex's methods!' When the relationship model is using Vertex's methods.", function(done) {
+            it("should return a WARN message: 'Cannot use Vertex's methods!' When the relationship model is using Vertex's methods.", function(done) {
                 app.models.relationship.outV({
                     "id": "#0:0"
                 }, function(e1, r1) {
@@ -243,7 +243,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return a VALIDATION message: 'ARG1's key must be a string!' When ARG1 isn't string.", function(done) {
+            it("should return a VALIDATION message: 'ARG1's key must be a string!' When ARG1 isn't string.", function(done) {
                 app.models.vertex1.outV({
                     5: 'a'
                 }, function(e1, r1) {
@@ -263,7 +263,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
+            it("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex2.outV({
                         "id": r1[0]._id
@@ -275,7 +275,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
+            it("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex1.outV({
                         'id': r1[0]._id
@@ -307,7 +307,7 @@ describe('', function() {
                 }).to.throw();
             });
 
-            xit("should return an ERROR message: 'Some arguments are missing!' When there is only a callback.", function(done) {
+            it("should return an ERROR message: 'Some arguments are missing!' When there is only a callback.", function(done) {
                 app.models.vertex1.bothV(function(e1, r1) {
                     e1.name.should.equal("ERROR");
                     e1.message.should.equal("Some arguments are missing!");
@@ -325,7 +325,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return a VALIDATION message: 'ID's format is invalid!' When ID's format is wrong.", function(done) {
+            it("should return a VALIDATION message: 'ID's format is invalid!' When ID's format is wrong.", function(done) {
                 app.models.vertex1.bothV({
                     'id': 'wrong_id_format'
                 }, function(e1, r1) {
@@ -335,7 +335,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
+            it("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex2.bothV({
                         "id": r1[0]._id
@@ -347,7 +347,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
+            it("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex1.bothV({
                         'id': r1[0]._id
@@ -363,7 +363,7 @@ describe('', function() {
         });
 
         describe("METHOD: inE", function() {
-            xit("should return a WARN message: 'Cannot use Vertex's methods!' When the relationship model is using Vertex's methods.", function(done) {
+            it("should return a WARN message: 'Cannot use Vertex's methods!' When the relationship model is using Vertex's methods.", function(done) {
                 app.models.relationship.inE({
                     "id": "#0:0"
                 }, function(e1, r1) {
@@ -379,7 +379,7 @@ describe('', function() {
                 }).to.throw();
             });
 
-            xit("should return an ERROR message: 'Some arguments are missing!' When there is only a callback.", function(done) {
+            it("should return an ERROR message: 'Some arguments are missing!' When there is only a callback.", function(done) {
                 app.models.vertex1.inE(function(e1, r1) {
                     e1.name.should.equal("ERROR");
                     e1.message.should.equal("Some arguments are missing!");
@@ -407,7 +407,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
+            it("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex2.inE({
                         "id": r1[0]._id
@@ -419,7 +419,7 @@ describe('', function() {
                 });
             });
 
-            xit("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
+            it("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
                 app.models.vertex1.V(function(e1, r1) {
                     app.models.vertex1.inE({
                         'id': r1[0]._id
@@ -452,7 +452,7 @@ describe('', function() {
             }).to.throw();
         });
 
-        xit("should return an ERROR message: 'Some arguments are missing!' When there is only a callback.", function(done) {
+        it("should return an ERROR message: 'Some arguments are missing!' When there is only a callback.", function(done) {
             app.models.vertex1.outE(function(e1, r1) {
                 e1.name.should.equal("ERROR");
                 e1.message.should.equal("Some arguments are missing!");
@@ -470,7 +470,7 @@ describe('', function() {
             });
         });
 
-        xit("should return a VALIDATION message: 'ID's format is invalid!' When ID's format is wrong.", function(done) {
+        it("should return a VALIDATION message: 'ID's format is invalid!' When ID's format is wrong.", function(done) {
             app.models.vertex1.outE({
                 'id': 'wrong_id_format'
             }, function(e1, r1) {
@@ -480,7 +480,7 @@ describe('', function() {
             });
         });
 
-        xit("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
+        it("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
             app.models.vertex1.V(function(e1, r1) {
                 app.models.vertex2.outE({
                     "id": r1[0]._id
@@ -492,7 +492,7 @@ describe('', function() {
             });
         });
 
-        xit("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
+        it("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
             app.models.vertex1.V(function(e1, r1) {
                 app.models.vertex1.outE({
                     'id': r1[0]._id
@@ -508,7 +508,7 @@ describe('', function() {
     });
 
     describe("METHOD: bothE", function() {
-        xit("should return a WARN message: 'Cannot use Vertex's methods!' When the relationship model is using Vertex's methods.", function(done) {
+        it("should return a WARN message: 'Cannot use Vertex's methods!' When the relationship model is using Vertex's methods.", function(done) {
             app.models.relationship.bothE({
                 "id": "#0:0"
             }, function(e1, r1) {
@@ -524,7 +524,7 @@ describe('', function() {
             }).to.throw();
         });
 
-        xit("should return an ERROR message: 'Some arguments are missing!' When there is only a callback.", function(done) {
+        it("should return an ERROR message: 'Some arguments are missing!' When there is only a callback.", function(done) {
             app.models.vertex1.bothE(function(e1, r1) {
                 e1.name.should.equal("ERROR");
                 e1.message.should.equal("Some arguments are missing!");
@@ -542,7 +542,7 @@ describe('', function() {
             });
         });
 
-        xit("should return a VALIDATION message: 'ID's format is invalid!' When ID's format is wrong.", function(done) {
+        it("should return a VALIDATION message: 'ID's format is invalid!' When ID's format is wrong.", function(done) {
             app.models.vertex1.bothE({
                 'id': 'wrong_id_format'
             }, function(e1, r1) {
@@ -552,7 +552,7 @@ describe('', function() {
             });
         });
 
-        xit("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
+        it("should return an INFO message: 'Not Found!' When the input ID exists, but it doesn't belong to the vertex2 class!", function(done) {
             app.models.vertex1.V(function(e1, r1) {
                 app.models.vertex2.bothE({
                     "id": r1[0]._id
@@ -564,7 +564,7 @@ describe('', function() {
             });
         });
 
-        xit("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
+        it("should return an array of Vertex1 when input arguments are correctly set.", function(done) {
             app.models.vertex1.V(function(e1, r1) {
                 app.models.vertex1.bothE({
                     'id': r1[0]._id
@@ -650,7 +650,7 @@ describe('', function() {
             });
         });
 
-        xit("should return an array of objects when input arguments are correctly set.", function(done) {
+        it("should return an array of objects when input arguments are correctly set.", function(done) {
             app.models.vertex1.V(function(e1, r1) {
                 app.models.vertex1.hasNot({
                     'id': r1[0]._id
@@ -680,7 +680,7 @@ describe('', function() {
             });
         });
 
-        xit("should return a VALIDATION message: 'ARG1's key must be a string!' When ARG1 isn't string.", function(done) {
+        it("should return a VALIDATION message: 'ARG1's key must be a string!' When ARG1 isn't string.", function(done) {
             app.models.vertex1.removeVertex({
                 5: 'a'
             }, function(e1, r1) {
@@ -690,7 +690,7 @@ describe('', function() {
             });
         });
 
-        xit("should return a VALIDATION message: 'ID's format is invalid!' When ID's format is wrong.", function(done) {
+        it("should return a VALIDATION message: 'ID's format is invalid!' When ID's format is wrong.", function(done) {
             app.models.vertex1.removeVertex({
                 "id": "wrong_id_format"
             }, function(e1, r1) {
@@ -700,7 +700,7 @@ describe('', function() {
             });
         });
 
-        xit("should return an object when input arguments are correctly set.", function(done) {
+        it("should return an object when input arguments are correctly set.", function(done) {
             app.models.vertex1.V(function(e1, r1) {
                 app.models.vertex1.removeVertex({
                     'id': r1[0]._id
@@ -716,7 +716,7 @@ describe('', function() {
     });
     describe("TEST OF: Edges", function() {
         describe("METHOD: e", function() {
-            xit("should return a WARN message: 'Cannot use Edge's methods!' When the vertex1 model is using Edge's methods.", function(done) {
+            it("should return a WARN message: 'Cannot use Edge's methods!' When the vertex1 model is using Edge's methods.", function(done) {
                 app.models.vertex1.e({
                     "id": "#0:0"
                 }, function(e1, r1) {
