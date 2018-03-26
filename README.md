@@ -150,7 +150,7 @@ g.filter('', '{{ COLLECTION NAME }}', {
 
 ## Tests
 
-All tests are written with [mocha](http://visionmedia.github.com/mocha/) and should be run with [npm](http://npmjs.org):
+All tests are written with [mocha](http://mochajs.org/) and should be run with [npm](http://npmjs.org):
 
 ``` bash
   $ npm test
